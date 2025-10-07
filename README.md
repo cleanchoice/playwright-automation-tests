@@ -4,7 +4,7 @@ A modern end-to-end testing framework using **Playwright**, designed with custom
 
 ## 📦 Installation
 
-Go to - https://github.com/cleanchoiceenergy/playwright-automation-tests
+Go to - https://github.com/cleanchoice/playwright-automation-tests
 Clone the project
 
 then run - npm install (it will install all needed dependencies)
@@ -44,23 +44,23 @@ comands for terminal
 
 ### All tests:
 
-npx playwright test
+`npx playwright test`
 
 ### Specific test file by relative path:
 
-npx playwright test tests/cce/auth/login.spec.ts
+`npx playwright test tests/cce/auth/login.spec.ts`
 
 ### Specific project:
 
-npx playwright test --project=cce
+`npx playwright test --project=cce`
 
 ### With UI (debug mode): (recomended to use for your local runs)
 
-npx playwright test --ui
+`npx playwright test --ui`
 
 - pass a relative path to a specific spec or the whole dir if you need to run or debug specific tests scope
 
-npx playwright test --ui tests/cce/ui/enrollment/web
+`npx playwright test --ui tests/cce/ui/enrollment/web`
 
 ## 🏗️ Project Structure
 
