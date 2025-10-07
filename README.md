@@ -48,11 +48,11 @@ npx playwright test
 
 ### Specific test file by relative path:
 
-npx playwright test tests/llc_attourney/auth/login.spec.ts
+npx playwright test tests/cce/auth/login.spec.ts
 
 ### Specific project:
 
-npx playwright test --project=llc_attourney
+npx playwright test --project=cce
 
 ### With UI (debug mode): (recomended to use for your local runs)
 
@@ -60,7 +60,7 @@ npx playwright test --ui
 
 - pass a relative path to a specific spec or the whole dir if you need to run or debug specific tests scope
 
-npx playwright test --ui tests/llc_attourney/ui/auth
+npx playwright test --ui tests/cce/ui/enrollment/web
 
 ## 🏗️ Project Structure
 
@@ -82,7 +82,7 @@ npx playwright test --ui tests/llc_attourney/ui/auth
 │   │   ├── common-browser-actions.ts    # Technical actions not focused on specific page or test
 │   │   ├── locator-maker.ts    # allows to add name for locators (needed for test steps)
 │   ├── tests                    # all spec files here
-│   │   └── llc_attourney/     # tests for llc_attourney project
+│   │   └── cce/                 # tests for cce project
 ├── .env
 ├── package.json                # configuration file for dependency management, contains npm scripts for test execution
 ├── playwright.config.ts        # Global config
@@ -163,7 +163,7 @@ Or globally via Playwright’s `launchOptions.slowMo`.
 
 ## 💬 Need Help?
 
-Ask your friendly QA team lead 😉 or check the docs: [Playwright Docs](https://playwright.dev/)
+Ask your friendly QA teammate 😉 or check the docs: [Playwright Docs](https://playwright.dev/)
 
 ---
 
