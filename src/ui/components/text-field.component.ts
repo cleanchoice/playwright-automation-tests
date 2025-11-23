@@ -1,5 +1,4 @@
 import { Locator, Page } from '@playwright/test';
-import { makeLocator } from '../../utils/locator-maker';
 import { expect } from '../../utils/wrapped-expect';
 
 export class TextFieldComponent {
@@ -21,25 +20,21 @@ export class TextFieldComponent {
   }
 
   root(name: TextFieldComponentNames): Locator {
-    return makeLocator(this.page, this.rootSelector(name), `Text field root "${name}"`);
+    return this.page.locator(this.rootSelector(name)).describe(`Text field root "${name}"`);
   }
 
   label(name: TextFieldComponentNames): Locator {
-    return makeLocator(this.page, `${this.rootSelector(name)} [datatestrole="label"]`, `Text field label "${name}"`);
+    return this.page.locator(`${this.rootSelector(name)} [datatestrole="label"]`).describe(`Text field label "${name}"`);
   }
 
   input(name: TextFieldComponentNames): Locator {
     const dtName = this.nameValue(name);
-    return makeLocator(
-      this.page,
-      `[datatestsubtype="textField"][datatestname="${dtName}"] [datatestrole="input"]`,
-      `Text Field input "${dtName}"`,
-    );
+    return this.page.locator(`[datatestsubtype="textField"][datatestname="${dtName}"] [datatestrole="input"]`).describe(`Text Field input "${dtName}"`);
   }
 
   // ---- error locators ----
   private errorBase(name: TextFieldComponentNames): Locator {
-    return makeLocator(this.page, `${this.rootSelector(name)} [datatestrole="error"]`, `Text field error "${name}"`);
+    return this.page.locator(`${this.rootSelector(name)} [datatestrole="error"]`).describe(`Text field error "${name}"`);
   }
 
   private errorFilter(errorType: TextFieldErrors): RegExp {
@@ -60,7 +55,7 @@ export class TextFieldComponent {
 
   getError(name: TextFieldComponentNames, errorType: TextFieldErrors): Locator {
     const base = this.errorBase(name);
-    return base.filter({ hasText: this.errorFilter(errorType) });
+    return base.filter({ hasText: this.errorFilter(errorType) }).describe(`Text field error "${name}"`);
   }
 
   // ---- actions ----

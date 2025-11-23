@@ -1,30 +1,29 @@
 import { Page } from '@playwright/test';
-import { makeLocator } from '../../utils/locator-maker';
 
 export class SignUpLocators {
   constructor(protected page: Page) {}
 
   get firstNameInput() {
-    return makeLocator(this.page, 'input[name="firstName"]', 'First Name Input');
+    return this.page.locator('input[name="firstName"]').describe('First Name Input');
   }
 
   get lastNameInput() {
-    return makeLocator(this.page, 'input[name="lastName"]', 'Last Name Input');
+    return this.page.locator('input[name="lastName"]').describe('Last Name Input');
   }
 
   get emailInput() {
-    return makeLocator(this.page, 'input[name="email"]', 'Email Input');
+    return this.page.locator('input[name="email"]').describe('Email Input');
   }
 
   get passwordInput() {
-    return makeLocator(this.page, 'input[name="password"]', 'Password Input');
+    return this.page.locator('input[name="password"]').describe('Password Input');
   }
 
   get confirmPasswordInput() {
-    return makeLocator(this.page, 'input[name="confirmPassword"]', 'Confirm Password Input');
+    return this.page.locator('input[name="confirmPassword"]').describe('Confirm Password Input');
   }
 
   get createAccountButton() {
-    return makeLocator(this.page, 'button[type="submit"]:has-text("Create Account")', 'Create Account Button');
+    return this.page.locator('button[type="submit"]:has-text("Create Account")').describe('Create Account Button');
   }
 }

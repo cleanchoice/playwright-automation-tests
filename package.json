@@ -30,7 +30,8 @@
     "ts-prune": "^0.10.3",
     "tsx": "^4.20.3",
     "typescript": "^5.8.3",
-    "typescript-eslint": "^8.39.1"
+    "typescript-eslint": "^8.39.1",
+    "axios": "^1.7.9"
   },
   "scripts": {
     "kill_processes": "src/utils/kill_processes.sh",

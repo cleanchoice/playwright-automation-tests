@@ -1,7 +1,6 @@
 import { expect } from '../../utils/wrapped-expect';
 import { BasePage } from './base-page';
 import { SignUpLocators } from '../locators/sign-up-locators';
-import { CommonMethods } from '../../utils/common-browser-actions';
 
 export interface SignUpRequest {
   firstName: string;
@@ -13,7 +12,6 @@ export interface SignUpRequest {
 
 export class SignUpPage extends BasePage {
   pagePath: string = '/v2/auth/signup';
-  private commonMethods: CommonMethods = new CommonMethods(this.page);
   private locators: SignUpLocators = new SignUpLocators(this.page);
 
   async verifyElementsVisibility(): Promise<void> {
